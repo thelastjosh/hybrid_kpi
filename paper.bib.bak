@@ -1,0 +1,226 @@
+% This file was created with JabRef 2.10.
+% Encoding: Cp1252
+
+
+@TechReport{ISO,
+  Title                    = {Smart community infrastructures -- Principles and requirements for performance metrics},
+  Author                   = {ISO/TS 37151:2015},
+  Year                     = {2015},
+
+  Owner                    = {abhishek},
+  Timestamp                = {2016.10.12}
+}
+
+@Article{2008arXiv0808.1023A,
+  Title                    = {{Categorical quantum mechanics}},
+  Author                   = {{Abramsky}, S. and {Coecke}, B.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2008},
+
+  Month                    = aug,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2008arXiv0808.1023A},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {0808.1023},
+  Keywords                 = {Quantum Physics, Mathematics - Category Theory, Mathematics - Logic},
+  Primaryclass             = {quant-ph}
+}
+
+@Article{agnos2011metrics,
+  Title                    = {METRICS AND TARGETS},
+  Author                   = {Agnos, Christopher and Bollhoefer, Jessica and Carroll, Brian and Hommes, Vreni and Ray, Abigail},
+  Year                     = {2011}
+}
+
+@Article{2015arXiv150405625B,
+  Title                    = {{A Compositional Framework for Passive Linear Networks}},
+  Author                   = {{Baez}, J.~C. and {Fong}, B.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2015},
+
+  Month                    = apr,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2015arXiv150405625B},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1504.05625},
+  Keywords                 = {Mathematics - Category Theory, Mathematical Physics},
+  Primaryclass             = {math.CT}
+}
+
+@Article{2009arXiv0903.0340B,
+  Title                    = {{Physics, Topology, Logic and Computation: A Rosetta Stone}},
+  Author                   = {{Baez}, J.~C. and {Stay}, M.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2009},
+
+  Month                    = mar,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2009arXiv0903.0340B},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {0903.0340},
+  Keywords                 = {Quantum Physics, Mathematics - Category Theory},
+  Primaryclass             = {quant-ph}
+}
+
+@Article{caird2016tale,
+  Title                    = {A Tale of Evaluation and Reporting in UK Smart Cities},
+  Author                   = {Caird, Sally and Hudson, Lorraine and Kortuem, Gerd},
+  Year                     = {2016},
+
+  Publisher                = {The Open University}
+}
+
+@Article{2015arXiv151208055C,
+  Title                    = {{A Mathematical Theory of Co-Design}},
+  Author                   = {{Censi}, A.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2015},
+
+  Month                    = dec,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2015arXiv151208055C},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1512.08055},
+  Keywords                 = {Computer Science - Logic in Computer Science, Computer Science - Robotics, Mathematics - Optimization and Control},
+  Primaryclass             = {cs.LO}
+}
+
+@Article{damerismart,
+  Title                    = {Smart City Implementation},
+  Author                   = {Dameri, Renata Paola},
+
+  Publisher                = {Springer}
+}
+
+@Article{derler2012modeling,
+  Title                    = {Modeling cyber--physical systems},
+  Author                   = {Derler, Patricia and Lee, Edward A and Vincentelli, Alberto Sangiovanni},
+  Journal                  = {Proceedings of the IEEE},
+  Year                     = {2012},
+  Number                   = {1},
+  Pages                    = {13--28},
+  Volume                   = {100},
+
+  Publisher                = {IEEE}
+}
+
+@Article{doran1981there,
+  Title                    = {There’s a SMART way to write management’s goals and objectives},
+  Author                   = {Doran, George T},
+  Journal                  = {Management review},
+  Year                     = {1981},
+  Number                   = {11},
+  Pages                    = {35--36},
+  Volume                   = {70}
+}
+
+@Article{epstein1997balanced,
+  Title                    = {The balanced scorecard and tableau de bord: translating strategy into action},
+  Author                   = {Epstein, Marc J and Manzoni, Jean-Francois},
+  Journal                  = {Strategic Finance},
+  Year                     = {1997},
+  Number                   = {2},
+  Pages                    = {28},
+  Volume                   = {79},
+
+  Publisher                = {Institute of Management Accountants}
+}
+
+@Article{2016arXiv160905382F,
+  Title                    = {{The Algebra of Open and Interconnected Systems}},
+  Author                   = {{Fong}, B.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2016},
+
+  Month                    = sep,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2016arXiv160905382F},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1609.05382},
+  Keywords                 = {Mathematics - Category Theory, 18C10, 18D10},
+  Primaryclass             = {math.CT}
+}
+
+@InProceedings{7515058,
+  Title                    = {Catalyzing the Internet of Things and smart cities: Global City Teams Challenge},
+  Author                   = {S. Rhee},
+  Booktitle                = {2016 1st International Workshop on Science of Smart City Operations and Platforms Engineering (SCOPE) in partnership with Global City Teams Challenge (GCTC) (SCOPE - GCTC)},
+  Year                     = {2016},
+  Month                    = {April},
+  Pages                    = {1-4},
+
+  Doi                      = {10.1109/SCOPE.2016.7515058},
+  Keywords                 = {Internet of Things;smart cities;GCTC;Global City Teams Challenge;Internet of Things;IoT;National Institute of Standards and Technology;smart cities;Collaboration;Data analysis;Hardware;Internet of things;NIST;Smart cities;GCTC;Global City Teams Challenge;Internet of Things;IoT Fabric;Replicability;Smart City}
+}
+
+@Article{2010arXiv1009.1166S,
+  Title                    = {{Functorial Data Migration}},
+  Author                   = {{Spivak}, D.~I.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2010},
+
+  Month                    = sep,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2010arXiv1009.1166S},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1009.1166},
+  Keywords                 = {Computer Science - Databases, Mathematics - Category Theory, 18A99, 94A99, 68P15, H.2.1, H.5.2},
+  Primaryclass             = {cs.DB}
+}
+
+@Article{2015arXiv150207380S,
+  Title                    = {{Nesting of dynamic systems and mode-dependent networks}},
+  Author                   = {{Spivak}, D.~I. and {Tan}, J.~Z.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2015},
+
+  Month                    = feb,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2015arXiv150207380S},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1502.07380},
+  Keywords                 = {Mathematics - Dynamical Systems, Mathematics - Category Theory, 18D50},
+  Primaryclass             = {math.DS}
+}
+
+@Article{2016arXiv160908086S,
+  Title                    = {{Dynamical Systems and Sheaves}},
+  Author                   = {{Spivak}, D.~I. and {Vasilakopoulou}, C. and {Schultz}, P.},
+  Journal                  = {ArXiv e-prints},
+  Year                     = {2016},
+
+  Month                    = sep,
+
+  Adsnote                  = {Provided by the SAO/NASA Astrophysics Data System},
+  Adsurl                   = {http://adsabs.harvard.edu/abs/2016arXiv160908086S},
+  Archiveprefix            = {arXiv},
+  Eprint                   = {1609.08086},
+  Keywords                 = {Mathematics - Category Theory, 18F20, 93A13},
+  Primaryclass             = {math.CT}
+}
+
+@InProceedings{7501714,
+  Title                    = {Real-Time and Predictive Analytics for Smart Public Transportation Decision Support System},
+  Author                   = {F. Sun and Y. Pan and J. White and A. Dubey},
+  Booktitle                = {2016 IEEE International Conference on Smart Computing (SMARTCOMP)},
+  Year                     = {2016},
+  Pages                    = {1--8},
+
+  Doi                      = {10.1109/SMARTCOMP.2016.7501714}
+}
+
+@Misc{gctc,
+  Title                    = {The Global Cities Team Challenge},
+
+  Owner                    = {abhishek},
+  Timestamp                = {2016.10.12},
+  Url                      = {https://www.us-ignite.org/globalcityteams/}
+}
+
