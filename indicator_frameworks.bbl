@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{coecke_spekkens}
+B.~Coecke and R.~Spekkens.
+\newblock Picturing classical and quantum bayesian inference.
+\newblock {\em Synthese}, 186(3):651--696, June 2012.
+
+\bibitem{fong13}
+B.~Fong.
+\newblock Causal theories: A categorical perspective on bayesian networks.
+\newblock Preprint, April 2013.
+
+\bibitem{lauritzen96}
+S.~L. Lauritzen.
+\newblock {\em Graphical Models}.
+\newblock Oxford University Press, 1996.
+
+\bibitem{lawvere62}
+F.~W. Lawvere.
+\newblock The category of probabilistic mappings.
+\newblock Unpublished seminar notes.
+
+\bibitem{selinger09}
+P.~Selinger.
+\newblock A survey of graphical languages for monoidal categories.
+\newblock Preprint, August 2009.
+
+\end{thebibliography}
