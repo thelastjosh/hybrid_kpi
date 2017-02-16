@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=copoint] (0) at (0, 3) {$Z$};
+		\node [style=point] (1) at (0, -3) {$X$};
+		\node [style=point] (2) at (0, 1) {$Y$};
+		\node [style=cpoint] (3) at (0, -1) {$Y$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3) to (1);
+		\draw (2) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}

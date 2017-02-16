@@ -1,10 +1,9 @@
-\begin{tikzpicture}[key=val]
-	\path [use as bounding box] (-0.5,-1) rectangle (0.5,0.75);
+\begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=state] (0) at (0, -0.5) {};
-		\node [style=effect] (1) at (0, 0.25) {};
+		\node [style=point] (0) at (0, -1) {$X$};
+		\node [style=copoint] (1) at (0, 1) {$Z$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [style=regular] (1) to (0);
+		\draw [style=none] (1) to (0);
 	\end{pgfonlayer}
 \end{tikzpicture}
