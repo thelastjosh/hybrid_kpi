@@ -1,39 +1,94 @@
-\documentclass{sig-alternate-05-2015}
-\input{preamble.tex}
+\documentclass[sigconf]{acmart}
+% \input{preamble.tex}
 
-\usepackage{amsmath, amssymb, authblk}
+\usepackage{amsmath, amssymb, amsthm, enumerate} % for some reason the sig document class doesn't work well with amsthm
 \usepackage{blkarray}
+\usepackage{tikz}
 \usetikzlibrary{cd}
-% for some reason the sig document class doesn't work well with amsthm \usepackage{amsthm} 
-%\usepackage{amsthm}
-%\usepackage{tikz}
-%\usetikzlibrary{matrix}
+\usetikzlibrary{matrix}
 %\usepackage[all]{xy}
 % \usepackage{url}
 
-\title{Indicator frameworks}
-\author[1]{Joshua Tan}
-\author[2]{Christine Kendrick}
-\author[3]{Abhishek Dubey}
-\author[4]{Sokwoo Rhee}
-\affil[1]{Department of Computer Science, University of Oxford}
-\affil[2]{Bureau of Planning and Sustainability, City of Portland}
-\affil[3]{Department of Electrical Engineering and Computer Science, Vanderbilt University}
-\affil[4]{National Institute for Standards and Technology}
-\date{\today}
+% theorems are included in the ACM version
+%\theoremstyle{definition}
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{conjecture}[theorem]{Conjecture}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{fact}[theorem]{Fact}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{examples}[theorem]{Examples}
+%\newtheorem{example*}[theorem]{Example*}
+%\newtheorem{examples*}[theorem]{Examples*}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{remark*}[theorem]{Remark*}
+%\newtheorem{question}[theorem]{Question}
+%\newtheorem{assumption}[theorem]{Assumption}
+%\newtheorem{convention}[theorem]{Convention}
 
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{lem}[thm]{Lemma}
+% begin Oxford stuff for diagrams
+\usepackage{rotating}
+\usepackage{floatpag}
+\rotfloatpagestyle{empty}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\setcounter{tocdepth}{4}
 
-\theoremstyle{plain}
-\newtheorem{define}{Definition}
-% \newtheorem{example}{Example}
+\newcommand{\showoptional}{1}
+\newcommand{\ismain}{0}
 
-% \theoremstyle{remark}
-%\newtheorem{remark}{Remark}
+\usepackage{hyperref}
+\usepackage{xspace,color,epsfig}
+\usepackage{graphicx}
+\graphicspath{{.}{./figures/}}
+\usepackage{marvosym}
+
+\usepackage{tikzfig}
+\usepackage{stmaryrd}
+\usepackage{docmute}
+\usepackage{keycommand}
+
+\input{defs.tex}
+\input{tikzstyles.tex}
+\newcommand{\alert}[1]{{\color{red}#1}}
+\let\olddagger\dagger
+\renewcommand{\dagger}{\ensuremath{\olddagger}\xspace}
+%\usepackage{makeidx}
+%\makeindex
+% end Oxford stuff
+
+% begin ACM stuff
+\usepackage{booktabs} % For formal tables
+\usepackage{balance} % For balanced columns on the last page
+\setcopyright{acmcopyright}
+\acmDOI{10.475/123_4}
+\acmISBN{123-4567-24-567/08/06}
+\acmConference[SCOPE 2017]{The 2nd Workshop on Science of Smart City Operations and Platforms Engineering}{April 2017}{Pittsburgh, PA USA}
+\acmYear{2017}
+\copyrightyear{2017}
+\acmPrice{15.00}
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10002950.10003648.10003649</concept_id>
+<concept_desc>Mathematics of computing~Probabilistic representations</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010520.10010553</concept_id>
+<concept_desc>Computer systems organization~Embedded and cyber-physical systems</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Mathematics of computing~Probabilistic representations}
+\ccsdesc[300]{Computer systems organization~Embedded and cyber-physical systems}
+
+\keywords{measurement, category theory, statistics, causal networks}
+% end ACM stuff
 
 % editing definitions
 \newcommand{\grayout}[1]{{\color{gray}#1}}
@@ -65,7 +120,6 @@
 
 % begin additional definitions
 \def\Ind{\Cat{Ind}}
-\def\Bayes{\Cat{Bayes}}
 \def\Rand{\Cat{Rand}}
 \def\Cor{\textnormal{Cor}}
 \def\Stoch{\Cat{Stoch}}
@@ -73,17 +127,41 @@
 \def\Data{\Cat{Data}}
 % end additional defintions
 
+\title{Indicator frameworks}
+%\titlenote{Produces the permission block, and copyright information}
+
+\author{Joshua Tan}
+\affiliation{%
+  \institution{Department of Computer Science, University of Oxford}
+}
+\email{joshua.tan@cs.ox.ac.uk}
+
+\author{Christine Kendrick}
+\affiliation{%
+  \institution{Bureau of Planning and Sustainability, City of Portland}
+}
+\email{Christine.Kendrick@portlandoregon.gov}
+
+\author{Abhishek Dubey}
+\affiliation{%
+  \institution{Department of Electrical Engineering and Computer Science, Vanderbilt University}
+}
+\email{abhishek.dubey@vanderbilt.edu}
+
+\author{Sokwoo Rhee}
+\affiliation{
+  \institution{National Institute for Standards and Technology}
+}
+\email{sokwoo.rhee@nist.gov}
+
+\date{\today}
+
+\begin{abstract}
+We develop a diagrammatic tool for constructing correlations between random variables, called an abstract indicator framework. Abstract indicator frameworks are modeled off operational (key performance) indicator frameworks as they are used in city planning and project governance, and give a rigorous, statistically-motivated process for constructing operational indicator frameworks.
+\end{abstract}
+
 \begin{document}
 \maketitle
-
-\abstract{We develop a diagrammatic tool for constructing correlations between random variables, called an abstract indicator framework. Abstract indicator frameworks are modeled off operational (key performance) indicator frameworks as they are used in city planning and project governance, and give a rigorous, statistically-motivated process for constructing operational indicator frameworks.}
-% Intuition: how the effects correlate serves as a proxy for a "holistic" vision of the intended effect.
-
-% Event structures: a valuation functor over consistent subsets that respects the consistency condition.
-
-%\redout{Suggestions from Ed: make sure to motivate the math before even mentioning ``hybrid indicator frameworks'' as a solution. There are things called ``process indicators'' in systems engineering, which are a bit different from KPIs.}
-%
-%\redout{Publication strategy: use this paper to focus on formalizing just indicator frameworks\emph{without mentioning the hybrid part}, with a diagrammatic calculus, and publish in the CPS week workshop. Create an application-focused paper, again without the `hybrid' part, that connects this workshop paper with the CPS Framework, and publish that in Ed's special issue. Finally, develop in late spring a full hybrid indicator framework paper.}
 
 \section{Introduction}
 We take as our starting point a diagrams of simple correlations, as below: % between the system variables of a complex system, as in the example below.
@@ -98,7 +176,7 @@ In this paper, we develop \emph{abstract indicator frameworks}, a diagrammatic t
 
 In city planning, there are several strategy-setting frameworks for constructing operational indicator frameworks, from balanced scorecards \cite{epstein1997balanced} to SMART \cite{doran1981there} to more specialized urban planning frameworks; in such frameworks, the indicators are often designed by mayors, chief strategy officers, and sizable expert committees in tandem with new projects, new policies, and new processes. Even assuming that the participants adhere to a framework, the process of choosing indicators is often ad hoc, the results do not account for statistical relationships between the indicators, and the generated data is hard to translate across localities.
 
-We propose an alternative. Instead of constructing operational indicator frameworks expensively and internally, meaning indicator-by-indicator, we can specify them abstractly and externally, by means of their causal and statistical relationships to other, already extant sets of indicators. Our approach is especially suited to the new `smart' projects and smart cities where a primary challenge is to relate and integrate many large, heterogeneous data sets. 
+We propose an alternative. Instead of constructing operational indicator frameworks expensively and internally, meaning indicator-by-indicator, we can specify them abstractly and externally, by means of their causal and statistical relationships to other, already-extant sets of indicators. Our approach is especially suited to situations where heterogeneous data is distributed across many projects and many localities.
 
 For example, cities are often interested in understanding the second-order impacts of specific projects, e.g. the impacts on health, crime, and jobs of a smart shuttle system. Assuming the existence of a local indicator framework for the shuttle system, and the existence of a top-level indicator framework representing broad priorities such as health, crime, jobs, and so on, then we can construct a mediating indicator set whose indicators satisfy certain statistical and causal relationships generated by the given indicator frameworks; these mediating indicators represent the second-order impacts of the local project to the city's other priorities.
 
@@ -160,9 +238,7 @@ As mentioned above, there are a variety of approaches to choosing indicator fram
 
 Even within the constraints of a process theory, there are still a number of diagrammatic approaches to probability. In this section, we will go over three examples: the traditional Hilbert space interpretation of random variables, the original category of probabilistic mappings suggested by Lawvere \cite{lawvere62}, and the diagrammatic approach of Coecke and Spekkens \cite{coecke_spekkens} to Lawvere's work. We also briefly discuss graphical models such as those surveyed in \cite{lauritzen96}, which are the most obvious applications of \cite{lawvere62} and \cite{coecke_spekkens}, e.g. see \cite{fong13}.
 
-The traditional approach, which we call $\Rand$, uses the fact that real-valued random variables over some fixed probability space $(\Omega, \mathcal{F}, \mathbb{P}$) form a Hilbert space $H$ where the inner product $\langle X, Y \rangle$ is just the covariance $\mathbb{E}(XY)$. Assuming that we restrict ourselves to standard variables with zero mean and unit variance, the covariance equals the correlation, and we can represent both by the inner product in $\Rand$. 
-
-This inner product can be written as a process diagram, namely as the composition of a state and an effect in $\Rand$ into the following diagram:
+The traditional approach, which we call $\Rand$, uses the fact that real-valued random variables over some fixed probability space $(\Omega, \mathcal{F}, \mathbb{P}$) form a Hilbert space $H$ where the inner product $\langle X, Y \rangle$ is just the covariance $\mathbb{E}(XY)$. Assuming that we restrict ourselves to standard variables with zero mean and unit variance, the covariance equals the correlation, and we can represent both by the inner product in $\Rand$.  This inner product can be represented by a process diagram, namely as the composition of a state and an effect in $\Rand$:
 \[
 \Cor(X,Y) = \text{Cov}(X,Y) = \langle X, Y \rangle =
 \begin{tikzpicture}
@@ -203,7 +279,23 @@ Using the language of symmetric monoidal categories,, Coecke and Spekkens \cite{
 : 1 \to A = (p_1, ..., p_n) \text{ such that } \sum_{j=1}^n p_j = 1
 \]
 
-A joint state is a state over the composite object ${1, ..., mn}$. A joint state is ``uncorrelated''---one should be careful, since this is correlation between probability distributions, not between random variables per se---when it can be decomposed into a tensor product, and perfectly correlated when it can be represented as a delta function. Uncorrelated and perfectly correlated joint states are depicted, respectively:
+A \emph{joint state} is a state over the composite object ${1, ..., mn}$, of the form
+\[
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wide point] (0) at (0, 0) {$P$};
+		\node [style=none] (1) at (0.75, 1) {};
+		\node [style=none] (2) at (0.75, 0) {};
+		\node [style=none] (3) at (-0.75, 1) {};
+		\node [style=none] (4) at (-0.75, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (1) to (2);
+		\draw [style=none] (3) to (4);
+	\end{pgfonlayer}
+\end{tikzpicture}
+\]
+A joint state is ``uncorrelated''---one should be careful, since this is correlation between probability distributions, not between random variables per se---when it can be decomposed into a tensor product, and perfectly correlated when it can be represented as a delta function. Uncorrelated and perfectly correlated joint states are depicted, respectively:
 \[
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
@@ -226,13 +318,20 @@ A joint state is a state over the composite object ${1, ..., mn}$. A joint state
 \end{tikzpicture}
 : 1 \to A \otimes B = (p_1q_1, ..., p_nq_m) % \text{ such that } \sum_{i=1}^{n} \sum_{j=1}^m p_iq_j = 1
 \]
-
-\begin{figure}[h!]
-\centering
-\label{bob_correlated_state}
-\includegraphics[width=\linewidth]{bob_correlated_state}
-\end{figure}
-
+\[
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=small black dot] (0) at (0, -0.5) {};
+		\node [style=none] (1) at (1, 0.5) {};
+		\node [style=none] (3) at (-1, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none, bend left=45] (1) to (0);
+		\draw [style=none, bend left=45] (0) to (3);
+	\end{pgfonlayer}
+\end{tikzpicture}
+: I \to A \otimes A = (\delta_{i,i'} \in \{1, ..., n\}.
+\]
 A perfectly anti-correlated joint state in $\FinStoch$ is just a cup with a NOT-gate attached to one end. 
 %\begin{figure}[h!]
 %\centering
@@ -248,7 +347,7 @@ There are two major problems with this graphical formalism, and with $\Stoch$ an
  & (\mathbb{R}, \Sigma_\mathbb{R})
 \end{tikzcd}
 \]
-Besides being difficult to work with, the point of view of this paper is that probability measures are not random variables nor are they sufficient replacements; traditionally, one views probability measures as something probability theorists invented in order to talk about random variables. While useful in the context of Bayesian networks, which can be articulated primarily in terms of stochastic processes, probability measures are less visible in cases driven by data and by correlational arguments.
+Besides being difficult to work with, the point of view of this paper is that probability measures are not random variables nor are they sufficient replacements; a probability measure is something probability theorists invented in order to talk about random variables. While useful in the context of Bayesian networks, which can be articulated primarily in terms of stochastic processes, probability measures are less visible in cases driven by data and by correlational arguments.
 
 The second problem is that there is not a good interpretation of \emph{effect}, i.e. of ``measuring'' or computing something with respect to a specific state. An effect in $\FinStoch$
 \[
@@ -405,21 +504,26 @@ The category of random variables, $\Rand$, is defined by the following data:
 \item the composition is the usual composition of bounded linear operators
 %two cross-correlation matrices $F: \mathcal{X} \to \mathcal{Y}$ and $G: \mathcal{Y} \to \mathcal{Z}$ is defined on individual entries by \[\Cor(X,Z) = \frac{1}{n} \sum_{Y_k \in \mathcal{Y}}^n \Cor(X,Y_k) \Cor(Y_k,Z)\]
 \item the tensor product of $\mathcal{X}$ and $\mathcal{Y}$ is the pushout over their joint support in $\Omega_\mathcal{X} \times \Omega_\mathcal{Y}$
+
 % it's possible that there's an algebraic equation describing the support in the outcome space, i.e. ``their context'' (in the limited sense of a set of commuting observables), and the relationships between different items in a given context (i.e. that the indicators/observables \emph{commute}, and generalizations thereof)
-% contextuality: is there data which is locally consistent, but globally inconsistent? not just haphazardly so, but necessarily so. the snapshots of data locally are okay, but when glued together...
-% there is no underlying global reality? we cannot observe all the data the same time; this is what makes it ``okay'' that there is not global underlying reality, because you can't see all aspects of such a global underlying reality at the same time.
 
-% compute a probability table for winning a game with a common ``verifier''... the quantum gives you better probabilities! ... the `complex' always gets you worse?
+% Concretely, ``no global underlying reality'' means that there is not a well-defined joint distribution on ALL the variables. What's an example, in city planning, of a case where not all measurement events are simultaneously satisfiable, i.e. where the gluing of events is inconsistent? Consider a set of random variables, representing a local project. We can `glue' this set of variables with another set of random variables by saying that we can co-measure the two (we can generate integrated data sets).
 
-% subadditivity: probability of the union is less than the probability of the sum; thus sum of the probabilities is lesser to or equal to N-1, UNDER THE ASSUMPTION that not all formulas are simultaneously satisfiable, where N is the number of formulas. So we've derived a bound...
+% Superposition encodes \emph{correlation}. I.e. the random variables (representing quantum particles) are entangled. Spooky action has to do with ``measurement changing the correlation''.
 
-% empirically observable probabilities only refer to subsets of the variables, not to ALL of the variables at once... there's no joint distribution on ALL the variables!
+% Ontological model = breakdown of the outcome/event structure, does't have to be a Bayesian network, can be quite general...
 
-% superposition encodes \emph{correlation}. I.e. the random variables (representing quantum particles) are entangled. Spooky action has to do with ``measurement changing the correlation''.
+% Take the example of a common verifier game, and compute its probability table. The quantum scenario will always give you better probabilities of winning compared to a classical scenario! Now add conditions to the classical scenario to capture the fact that it is ``complex''. Will the probability of winning always be worse? Does the data of an observational study always reflect objective properties? Or are the properties always subject to interpretation and, more pertinently, to a notion of response/feedback?
 
-% can you imagine a set of random variables, representing a local project or something, which `glues' with some other, but somehow the gluing of the total is inconsistent? we can represent this as a set of equations all of which cannot be simultaneously true.
+% Look up ``hidden variable'' arguments in quantum mechanics. One may tensor with a ``hidden variable'' to control your data analysis?
 
-% Consider some version of Mermin's square...
+% How do we define a measurement cover for a given theory? I.e. how do we know that $a, a'$ really can't (or ``shouldn't'' be measured at the same time (or some similar notion?). Is there a way of inferring or deriving this? Given the measurement cover, we can induce on similar relations on the values actually measured across different measurement variables, and it's on these relations that we compute a global section. Each cover specifies, in essence, a indicator framework (as a set, not as a diagram/poset). Can we impose a cost function on constructing measurement covers?
+
+% What is the base space? I.e. random variables. The random variables are connected to each other... and the more connections there are, the most constraints there are (obstacles there are) to finding a global section...
+% There's a fun application to the liar paradox (all Cretans are liars?) in terms of finding a univocal path in the bundle picture over a base space of measurements! Great example? 
+
+% Space-like separation... can we get in spatial measurement via ``relativity''? no-signalling conditions for intersections of contexts can be written as equations satisfied on their probability tables...
+
 \end{enumerate}
 \end{definition}
 % Should the random variables be operators on the Hilbert space $\mathbb{R}$, rather than as basis elements? No. The probability distributions are the operators.
@@ -473,7 +577,7 @@ In this case, integrating data is not a problem, so we can compute the correlati
 	\end{pgfonlayer}
 \end{tikzpicture}
 \]
-Then by definition, we have
+\redout{Need to check that $\rho_W$ and $\eta_W$ can be expressed as morphisms in $\Rand$}. Then by definition, we have
 \[
 \rho_{XZ \cdot W} =
 \begin{tikzpicture}
@@ -502,7 +606,7 @@ It will help to think of random variables as representing column vectors or ``di
 The category of $\mathbb{R}$-valued data tables, $\Data$, is defined by the following data:
 \begin{enumerate}
 \item objects $\mathcal{X} = (\mathcal{X}, \Omega_\mathcal{X}, \mathbb{I}_\mathcal{X})$ of $\Data$ are $m \times n$ tables of $\mathbb{R}$-valued data vectors whose rows are assigned an index key given by $\mathbb{I}_\mathcal{X} : \Omega_\mathcal{X} \to \mathbb{R}$ and whose columns, $B_\mathcal{X} = \{X_1, ..., X_n\}$, represent indicators
-\item morphisms $f: \mathcal{X} \to \mathcal{Y}$ are linear transformations of the column values by addition and scalar multiplication
+\item morphisms $f: \mathcal{X} \to \mathcal{Y}$ are linear transformations of the column values of $\mathcal{X}$ by vector addition (of other columns in $\mathcal{X}$) and scalar multiplication
 %$n \times k$ $\mathbb{R}$-valued stochastic matrices mapping indicator sets to indicator sets 
 % of the form $L_Y^\dagger \circ L_X$, where $L_X L^\dagger_X$ is the Cholesky decomposition of the correlation matrix on $X$
 \item the composition is just the matrix product
@@ -516,7 +620,7 @@ Suppose we are working in a 3-dimensional Hilbert space $\mathcal{X}$ with a bas
 So we lack data. But to take just one example, in a database setting there are ways to reason about ``missing data'', e.g. database nulls, especially when that data is the subject of a data migration or integration, as described in \cite{spivak10}. In particular, one can impose a set of algebraic equations that each null value must satisfy, where the equations are given by a diagram of database schema mappings. More generally, almost every diagram in a category articulates a set of constraints on the objects of that category.
 
 \begin{example}
-Recall our earlier example, where $X$ stands for the number of riders on a particular bus in a city, and $Z$ stands for the number of absent students across a city. Suppose that we have already controlled $X$ and $Z$ for economic performance (i.e. $W$) along with any number of other confounding variables, that we have found (or suspect) a small but significant correlation between $X$ and $Z$, and that we are now interested in understanding \emph{how} $X$ correlates with $Z$.
+Recall our earlier example, where $X$ stands for the number of riders on a particular bus in a city, and $Z$ stands for the number of absent students across a city. Suppose that we have already controlled $X$ and $Z$ for economic performance (i.e. $W$) along with any number of other confounding variables, and that we have found (or suspect) a small but significant correlation between $X$ and $Z$. We are now interested in understanding \emph{how} $X$ correlates with $Z$.
 
 There may be a variety of possible explanations for why this correlation exists: maybe dropping the price of a ticket (thus promoting more bus ridership) allows more students to go to school, or perhaps additional bus ridership decreases traffic, which gives harried parents more time to track their truant children. Without choosing any one explanation, we can represent the statistical properties of a set of mediating, ``explanatory'' variables $\mathcal{Y}$ by a `sum' of the possible explanations:
 \begin{equation}\label{eqn:summation}
@@ -543,7 +647,7 @@ The equation above succinctly represents a set of constraints that we can impose
 \end{example}
 
 \begin{definition}
-A \emph{mediating framework} between two sets of random variables $\mathcal{X}, \mathcal{Z}$ is a set of random variables $\mathcal{Y}$ such that Equation~\ref{eqn:summation} is satisfied for all variables $X \in \mathcal{X}, Z \in \mathcal{Z}$.
+A \emph{mediating framework} between two spaces of random variables $\mathcal{X}, \mathcal{Z}$ is a space of random variables $\mathcal{Y}$ such that Equation~\ref{eqn:summation} is satisfied for all variables $X \in \mathcal{X}, Z \in \mathcal{Z}$.
 \end{definition}
 
 % \redout{We want to construct an ``optimal intermediate basis'' $\{Y_1, ..., Y_m\}$ (over the same probability space? or over a different probability space!?) that is as small as possible, while being just large enough to capture, precisely, all the ways $X$ can influence $Z$---it's sort of like polynomial interpolation: instead of asking what is the simplest polynomial I can construct that interpolates this data, ask something like, what is the smallest set of indicators that I need in order to capture the correlation between $\{X_i\}$ and $\{Z_j\}$. (Then, on top of this, the causal order introduces another set of constraints.)}
@@ -604,8 +708,8 @@ We recall the definition of causal theory from Fong \cite{fong13}, as a certain 
 	\begin{pgfonlayer}{edgelayer}
 		\draw (1) to (0.center);
 		\draw (3.center) to (2.center);
-		\draw (3.center) to (4.center);
-		\draw (3.center) to (5.center);
+		\draw (3.center)[bend left=45] to (4.center);
+		\draw (3.center)[bend right=45] to (5.center);
 	\end{pgfonlayer}
 \end{tikzpicture}
 \]
@@ -722,54 +826,23 @@ One may directly compare $\Ind$ with the category of stochastic causal models in
 \section{Conclusion}
 In this paper, we sought to give a rigorous mathematical alternative to the traditional, indicator-by-indicator process of constructing indicator frameworks, especially in city planning and project governance. We proposed that indicator frameworks could be defined (and optimized) by means of their relationships to other indicator frameworks. These relationships were probabilistic as well as causal. Therefore, we sought to develop a semantics for the problem of constructing indicator frameworks that could accommodate both probabilistic and causal modes of reasoning.
 
-We examined several options for the semantics of probability, including $\Bayes$ \cite{coecke_spekkens} and $\Stoch$ \cite{lawvere62}. After reflecting on the practical necessities of data analysis, we decided to base our construction on a category more directly in terms of random variables and correlations, and defined the symmetric monoidal category $\Rand$ random variables and correlations. We then introduced the idea of a causal model from \cite{fong13}, and used this to motivate the definition of the category $\Ind$ of abstract indicator frameworks as models of a causal theory in $\Rand$.
+We examined several options for the semantics of probability, including $\Stoch$ \cite{lawvere62}, $\FinStoch$, and their corresponding diagrammatic representations \cite{coecke_spekkens}. After reflecting on the practical necessities of data analysis, we decided to base our construction on a category more directly in terms of random variables and correlations, and defined the symmetric monoidal category $\Rand$ of (spaces of) random variables. We then introduced the idea of a causal model from \cite{fong13}, and used this to motivate the definition of the category $\Ind$ of abstract indicator frameworks as models of a causal theory in $\Rand$.
 
 We then used $\Ind$ as the setting for an optimization problem: how to construct a mediating indicator framework that best explains the relationship between a given set of indicators, such as those of a specialized project in a city, and another set of indicators, such as headline indicators of broad interest to the public. Such a mediating framework can be used to answer the question, ``what are the secondary impacts of my project?''
 
-This paper is the subject of ongoing research; future versions will address applications to more complicated, real-world examples in city administration, as well as the integration of other mathematical models beyond causal ones into the framework. Other additional future work include the possibility of studying the constraints on data-supported applications introduced by constraints on their underlying indicators, as well as closer examinations of the phenomenon of tensoring or `gluing' data sets, and the possible obstacles such gluings might introduce to producing a consistent global picture of the complex system.
+This paper is the subject of ongoing research; future versions will address applications to more complicated, real-world examples in city administration, as well as the integration of other mathematical models beyond causal ones into the framework. Other additional future work include the possibility of studying the constraints on data-supported applications introduced by constraints on their underlying indicators, an analysis of how to translate an ``ontological model'' of the event space into constraints on the data, as well as closer examinations of the phenomenon of tensoring or `gluing' data sets and the possible obstacles such gluings may introduce to producing a consistent global picture of the complex system.
 
 % indicator frameworks allow us to connect complicated knowledge of the world directly to our decision-making processes
 
-% \redout{What about application-level analysis based on indicator sets? I.e. what sorts of applications can/should certain indicators support?}
-
-\section{Acknowledgements}
+\begin{acks}
 We would like to thank Bob Coecke, Bilin Guvenc, Levent Guvenc, Derek Loftis, and Ed Griffor for helpful conversations in the writing of this paper.
 
 \emph{Disclaimer: certain commercial products may be identified in order to adequately specify the procedure; this does not imply endorsement or recommendation by NIST, nor does it imply that such products are necessarily the best available for the purpose. Official contribution of the National Institute of Standards and Technology; not subject to copyright in the United States.}
+\end{acks}
 
-%\section{Misc. Notes}
-%% \footnote{The reason for wanting a process theory of the variables represented in the correlation diagram is based on the intuition that each variable represents a functional component of a cyber-physical system, not a node in a network; this suggests a mathematical interpretation of the diagram should have more in common with the semantics of computation than with the modeling of complex networks.} 
-%
-%As $\Cor(X,Z) \to 1$, the relationship approaches that of a linear function.
-%
-%Perhaps the composition $g \circ f : X \to Z$ can be defined as the difference
-%\begin{align}
-%g \circ f = \Cor(X,Z) - \Cor(X,Y)\Cor(Y,Z)
-%\end{align}
-%
-%Correlation theory wishlist
-%\begin{enumerate}
-%\item Cost heuristic on (sets of) indicators, such that imposing a state and an effect creates an optimization problem. Recall: \emph{For a given policy or project, what is the `right' set of indicators to measure it? Subtext: ``holistic''?} % Is there a duality between indicators as ``features'' in a given data analysis problem, and indicators here as something we are optimizing over---picking the best features. Akin to states vs. effects?
-%\item A super-indicator is a ``conceptual'' indicator, whose correlation  is not set down in terms of its data, and which is supposed to represent the priorities of the Mayor, and it should be definable, at least partly, in terms of the particular projects and policies related to it.
-%
-%``Super'' indicators, e.g. quality-of-life, that represent high-level goals disconnected from reality or data, as joint indicators with special properties. A super-indicator (or any joint indicator) like quality-of-life should be at least partially defined in terms of the projects and policies which can affect it. % A person has an ``intuitive sense of what they want''. We want to view this intuitive sense as just the decomposition rule into measurable things. This follows what a city person does in practice; they want to ``improve the transportation system''.
-%\item Statistical significance of the correlation. E.g. how can we check that we have enough data points, or represent the fact that we don't have enough? % Also, in some situations, even if we do find a highly significant correlation, then this could be attributed not to the direct relation of the quantities but just because they are both correlated to the same confounding factor. How do we deal with this?
-%\item Correlation of residuals? % Any uptrending or down-trending metric will be highly-correlated. When this problem arises, try as a solution to remove the uptrend and then measure the correlation of residuals.
-%\item ``Knowledge about the indicators'' can be formalized through functors from other categories to $\Ind$.
-%\end{enumerate}
-%
-%Process theory wishlist:
-%\begin{enumerate}
-%\item Measurements of state % What is a policy or project? A process. What is evaluation or measurement? It is a 0,1 (or, possibly, something in [0,1], in a quantile, or, much more generally, a value in any symmetric monoidal category).
-%\item Correlations between indicators
-%\item General processes in the underlying complex system
-%\end{enumerate}
-%
-%Arbitrary system variables in the complex system do not have an assigned meaning of measurement (in other ways, we're not collecting data on them)... but that doesn't mean they don't matter. Similarly [but in what way?], there is no underlying reality or total state of the complex system; the state may not be measurable, but that doesn't mean it doesn't matter. We should be able to put them into larger equations that govern the whole.
-%
-%% What is an indicator (or a sensor)? It's a ``measurement tool''; alternately, you can think of it as a ``feature''; something that, given an input, outputs a 0 or a 1 depending on whether or not a stated effect has occurred. In the ONB formulation, it's a test for whether the input vector is equal to the stated effect.
-%
-\bibliographystyle{abbrv}
+\balance % ACM command for...?
+%\bibliographystyle{abbrv}
+\bibliographystyle{ACM-Reference-Format}
 \bibliography{paper} 
 
 \end{document}
