@@ -1,12 +1,10 @@
 \documentclass[sigconf]{acmart}
-% \input{preamble.tex}
 
-\usepackage{amsmath, amssymb, amsthm, enumerate} % for some reason the sig document class doesn't work well with amsthm
+\usepackage{amsmath, amssymb, amsthm, enumerate}
 \usepackage{blkarray}
 \usepackage{tikz}
 \usetikzlibrary{cd}
 \usetikzlibrary{matrix}
-%\usepackage[all]{xy}
 % \usepackage{url}
 
 % theorems are included in the ACM version
@@ -62,8 +60,8 @@
 \usepackage{booktabs} % For formal tables
 \usepackage{balance} % For balanced columns on the last page
 \setcopyright{acmcopyright}
-\acmDOI{10.475/123_4}
-\acmISBN{123-4567-24-567/08/06}
+\acmDOI{10.475/123_4} % CHANGE ONCE THEY EMAIL
+\acmISBN{123-4567-24-567/08/06} % CHANGE ONCE THEY EMAIL
 \acmConference[SCOPE 2017]{The 2nd Workshop on Science of Smart City Operations and Platforms Engineering}{April 2017}{Pittsburgh, PA USA}
 \acmYear{2017}
 \copyrightyear{2017}
@@ -81,10 +79,16 @@
 <concept_desc>Computer systems organization~Embedded and cyber-physical systems</concept_desc>
 <concept_significance>300</concept_significance>
 </concept>
+<concept>
+<concept_id>10002951.10003227.10003241</concept_id>
+<concept_desc>Information systems~Decision support systems</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
 </ccs2012>
 \end{CCSXML}
 
 \ccsdesc[500]{Mathematics of computing~Probabilistic representations}
+\ccsdesc[300]{Information systems~Decision support systems}
 \ccsdesc[300]{Computer systems organization~Embedded and cyber-physical systems}
 
 \keywords{measurement, category theory, statistics, causal networks}
@@ -94,6 +98,7 @@
 \newcommand{\grayout}[1]{{\color{gray}#1}}
 \newcommand{\redout}[1]{{\color{red}#1}}
 \newcommand{\marginnote}[1]{\marginpar{\footnotesize \color{blue}#1}}
+% end editing definitions
 
 % category theory definitions
 \DeclareMathOperator{\id}{id}
@@ -118,18 +123,18 @@
 \def\Bool{\Cat{Bool}}
 % end category theory definitions
 
-% begin additional definitions
+% begin paper-specific definitions
 \def\Ind{\Cat{Ind}}
 \def\Rand{\Cat{Rand}}
 \def\Cor{\textnormal{Cor}}
 \def\Stoch{\Cat{Stoch}}
 \def\FinStoch{\Cat{FinStoch}}
 \def\Data{\Cat{Data}}
-% end additional defintions
+\def\One{\textbf{1}}
+% end paper-specific defintions
 
 \title{Indicator frameworks}
 %\titlenote{Produces the permission block, and copyright information}
-
 \author{Joshua Tan}
 \affiliation{%
   \institution{Department of Computer Science, University of Oxford}
@@ -150,7 +155,7 @@
 
 \author{Sokwoo Rhee}
 \affiliation{
-  \institution{National Institute for Standards and Technology}
+  \institution{National Institute of Standards and Technology, US Department of Commerce}
 }
 \email{sokwoo.rhee@nist.gov}
 
@@ -251,7 +256,7 @@ The traditional approach, which we call $\Rand$, uses the fact that real-valued 
 	\end{pgfonlayer}
 \end{tikzpicture}
 \]
-As we will see in the next section, $\Rand$ is actually already very close to what we want; the problem is that the obvious categorification of $\Rand$ does not give a natural way of analyzing the data of ``intermediate'' correlations.
+As we will see in the next section, $\Rand$ is actually already very close to what we want; the problem is that the obvious categorical interpretation of $\Rand$ does not give a natural way of analyzing the data of ``intermediate'' correlations.
 
 $\Rand$ is closely related to older work on the categorical foundations of probability initiated by Lawvere in \cite{lawvere62} and developed in Giry \cite{giry82}:
 \begin{definition}
@@ -492,12 +497,12 @@ That is, the correlation between $X$ and $Z$ can be computed by applying a trans
 
 % \redout{Shouldn't one typical feature of an indicator framework be that the variables SHOULD be correlated (or anti-correlated) with each other? Otherwise how do we do optimization of processes? So these things \emph{cannot} be orthogonal to each other...}
 
-We can formalize this intuition. Recall that real-valued, square-integrable random variables over a given probability space form a Hilbert space $L^2(\Omega, \Sigma, \mathbb{P})$ whose inner product is just the covariance.
+We can formalize this intuition. Recall that real-valued, square-integrable random variables over a given probability space form a Hilbert space $L^2(\Omega, \Sigma, \mathbb{P})$ whose inner product is just the covariance. % i.e. the `best estimate of $X$ using $Y$', i.e. the linear function of $Y$ which is closest to $X$, i.e. $a + bX$ for some $a$ and $b$.
 
 \begin{definition}
 The category of random variables, $\Rand$, is defined by the following data:
 \begin{enumerate}
-\item objects are finite-dimensional Hilbert spaces \[ \mathcal{X} = L^2(\Omega_\mathcal{X}, \Sigma_\mathcal{X}, \mathbb{P}_\mathcal{X})\] of square-integrable random variables (under the equivalence relation $X_1 \sim X_2$ if $\mathbb{P}_\mathcal{X}(X_1 = X_2) = 1$) with inner product $\langle X,Y\rangle = E(XY)$, defined over probability spaces $(\Omega_\mathcal{X}, \Sigma_\mathcal{X}, \mathbb{P}_\mathcal{X})$, with an associated basis $B_\mathcal{X} = \{ X_1, X_2, ..., X_n \}$
+\item objects are finite-dimensional Hilbert spaces \[ \mathcal{X} = L^2(\Omega_\mathcal{X}, \Sigma_\mathcal{X}, \mathbb{P}_\mathcal{X})\] of square-integrable random variables (under the equivalence relation $X_1 \sim X_2$ if $\mathbb{P}_\mathcal{X}(X_1 = X_2) = 1$) with inner product $\langle X,Y\rangle = E(XY)$, defined over probability spaces $(\Omega_\mathcal{X}, \Sigma_\mathcal{X}, \mathbb{P}_\mathcal{X})$, with an associated basis $\mathcal{B}_\mathcal{X} = \{ X_1, X_2, ..., X_n \} \cup \One$, where $\One$ is the random variable with constant value 1. % and all simple linear regressions of $X_i$ with respect to $X_j$
 \item morphisms $F: \mathcal{X} \to \mathcal{Y}$ are bounded linear operators
 % the cross-correlation matrices between (a vector of) the basis elements of $\mathcal{X}$ and those of $\mathcal{Y}$ 
 % lifts of a stochastic kernel from $(\Omega, \mathcal{F}, \mathbb{P})$
@@ -524,14 +529,17 @@ The category of random variables, $\Rand$, is defined by the following data:
 
 % Space-like separation... can we get in spatial measurement via ``relativity''? no-signalling conditions for intersections of contexts can be written as equations satisfied on their probability tables...
 
+% Co-chains are linear maps. The coboundary map on a given cochain, or ``linear variable'' $s \in C^1(X,\mathbb{R})$, represents the entire set of equations on the LHS over all the contexts, $ds(\sum_{c} c)$, and the zero-ing of this map on the sum of all contexts is the indicated witness of non-contextuality. What are these ``linear variables'' though... how do we use a set of linear variables to represent a bunch of nonlinear random variables?
+
 \end{enumerate}
 \end{definition}
 % Should the random variables be operators on the Hilbert space $\mathbb{R}$, rather than as basis elements? No. The probability distributions are the operators.
+% modulo = keeping constant = X modulo Y, i.e. Is there a quotient on random variables?
 
 \begin{example}
-Suppose that the transportation department buys a new bus and designates an indicator, $X$, that counts the number of riders on the bus per day. Elsewhere, the education department tracks an indicator, $Z$, that counts the number of students per day who are absent from class across the whole city.
+Suppose that the transportation department buys a new bus and designates an indicator, $X$, that counts the number of riders on the bus per day. Elsewhere, the education department tracks an indicator, $Z$, that counts the number of students per day who are absent from class across the whole city. Assume that $X$ and $Z$ live in indicator sets $\mathcal{X}$ and $\mathcal{Z}$.
 
-In this case, integrating data is not a problem, so we can compute the correlation between $X$ and $Z$. But even if we did, the correlation may be very small, or conversely it may be absurdly high, especially if there is some antecedent variable correlated with both $X$ and $Z$, e.g. an economic boom. Suppose the federal government tracks a separate variable, $W$, on aggregate economic performance per quarter. The first step is to get rid of the influence of $W$, i.e. compute the residuals $R_X, R_Z$ of $X, Z$ resulting from their linear regression with $W$. Assuming that $X$ and $Z$ live in indicator sets $\mathcal{X}$ and $\mathcal{Z}$ respectively, we can represent the residual as transformations $\rho_W, \eta_W$ on $X \in \mathcal{X}$ and $Z \in \mathcal{Z}$, respectively:
+First, we ``integrate'' the data by computing $\mathcal{X} \otimes \mathcal{Z}$, so that the correlation is computed only on days for which $X,Z$ both have data. We compute the correlation: then the correlation may be very small, or conversely it may be absurdly high, especially if there is some confounding variable correlated with both $X$ and $Z$, e.g. an economic boom. Suppose the federal government tracks a separate variable, $W$, on aggregate economic performance per quarter. The first step is to get rid of the influence of $W$, i.e. compute the residuals $X_W, Z_W$ of $X, Z$ resulting from their linear regression with $W$. Assuming that $X$ and $Z$ live in indicator sets $\mathcal{X}$ and $\mathcal{Z}$ respectively, and that $W$ lives in both $\mathcal{X}$ and $\mathcal{Z}$, we can represent computing the residuals as applying transformations $\rho_W, \eta_W$ on $X \in \mathcal{X}$ and $Z \in \mathcal{Z}$, respectively:
 \[
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
@@ -547,7 +555,7 @@ In this case, integrating data is not a problem, so we can compute the correlati
 =
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=point] (0) at (0, 0) {$R_X$};
+		\node [style=point] (0) at (0, 0) {$X_W$};
 		\node [style=none] (1) at (0, 2) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
@@ -569,7 +577,7 @@ In this case, integrating data is not a problem, so we can compute the correlati
 =
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=point] (0) at (0, 0) {$R_Z$};
+		\node [style=point] (0) at (0, 0) {$Z_W$};
 		\node [style=none] (1) at (0, 2) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
@@ -577,7 +585,7 @@ In this case, integrating data is not a problem, so we can compute the correlati
 	\end{pgfonlayer}
 \end{tikzpicture}
 \]
-\redout{Need to check that $\rho_W$ and $\eta_W$ can be expressed as morphisms in $\Rand$}. Then by definition, we have
+For variables $X,Y$, let us denote the linear regression of $X$ with respect to $Y$ by $X|Y$. $\rho_W$ and $\eta_W$ are indeed morphisms in $\Rand$, i.e. bounded linear operators, since the residual of a linear regression can be written in the form $X_W = X - X|W = X - (a\One + bW)$, where $a,b$ are constants. (Technically, everything above happens in the ``larger'' Hilbert space $\mathcal{X} \otimes \mathcal{Z}$; $\rho_W, \eta_W$ are projections from this larger space.) Then by definition, we have
 \[
 \rho_{XZ \cdot W} =
 \begin{tikzpicture}
@@ -647,14 +655,14 @@ The equation above succinctly represents a set of constraints that we can impose
 \end{example}
 
 \begin{definition}
-A \emph{mediating framework} between two spaces of random variables $\mathcal{X}, \mathcal{Z}$ is a space of random variables $\mathcal{Y}$ such that Equation~\ref{eqn:summation} is satisfied for all variables $X \in \mathcal{X}, Z \in \mathcal{Z}$.
+A \emph{mediating framework} between two spaces of random variables $\mathcal{X}, \mathcal{Z}$ is a space of random variables $\mathcal{Y}$ such that Equation~\ref{eqn:summation} is satisfied for all variables $X \in \mathcal{X}, Z \in \mathcal{Z}$. % this definition doesn't use the data of any of the ``internal'' correlations within $\mathcal{X}$ and $\mathcal{Z}$...
 \end{definition}
 
 % \redout{We want to construct an ``optimal intermediate basis'' $\{Y_1, ..., Y_m\}$ (over the same probability space? or over a different probability space!?) that is as small as possible, while being just large enough to capture, precisely, all the ways $X$ can influence $Z$---it's sort of like polynomial interpolation: instead of asking what is the simplest polynomial I can construct that interpolates this data, ask something like, what is the smallest set of indicators that I need in order to capture the correlation between $\{X_i\}$ and $\{Z_j\}$. (Then, on top of this, the causal order introduces another set of constraints.)}
 
 % Nor \emph{should} we expect the composition to preserve the validity of the sample correlations; inferring a correlation is never a mechanical process. Instead, we follow the intuition of Equation~\ref{eqn:guess2}: the `true' composition will always go through a set of random variables $\mathcal{Y}$ such that $\rho_{XZ \cdot \mathcal{Y}} = 0$. This allows us to structure the composition as an optimization problem: find $\mathcal{Y}$ such that $\rho_{XZ \cdot \mathcal{Y}}$ goes to $0$. We will call $\mathcal{Y}$ the \emph{indicator framework from $\mathcal{X}$ to $\mathcal{Z}$}. It is, by construction, an orthonormal set of random variables.
 
-$\Rand$ and $\Data$ supply the basic statistical foundation for a theory of indicator frameworks. We would now like to incorporate a causal foundation. There are several reasons for doing so. First: many statistical arguments, e.g. partial correlation, actually rely on an implicit choice of causal model---see discussions related to confounding and mediating variables by Pearl \cite{pearl09}, among others. For example, given three random variables $X, Y, Z$; the partial correlations $\rho_{XZ \cdot Y}$, $\rho_{XY \cdot Z}$, or $\rho_{YZ \cdot X}$ are all equally valid; which one we take as `true' depends on which of the following causal structures we believe is true:
+$\Rand$, $\Data$, and the notion of mediating indicator set supply the basic statistical foundation for a theory of indicator frameworks. We would now like to incorporate a causal foundation. There are several reasons for doing so. First: many statistical arguments, e.g. partial correlation, actually rely on an implicit choice of causal model---see discussions related to confounding and mediating variables by Pearl \cite{pearl09}, among others. For example, given three random variables $X, Y, Z$; the partial correlations $\rho_{XZ \cdot Y}$, $\rho_{XY \cdot Z}$, or $\rho_{YZ \cdot X}$ are all equally valid; which one we take as `true' depends on which of the following causal structures we believe is true:
 
 \[
 \begin{tikzpicture}
@@ -738,7 +746,9 @@ and by a set of causal mechanisms generated from the causal structure, $[A] : \v
 \end{tikzpicture}
 \]
 
-Given a causal theory, i.e. a symmetric monoidal category, we can define a model of that causal theory $\mathcal{C}$ in $\Rand$ as a strong monoidal functor $F : \mathcal{C} \to \Rand$. To specify such a functor, it suffices to define its behavior on every atomic variable and every generating map in $\mathcal{C}$, i.e. the counit, comultiplication, and causal mechanisms of $\mathcal{C}$, since the values of the functor on the rest of $\mathcal{C}$ is specified up to isomorphism by the definition of a strong monoidal functor. % The comultiplication is just the diagonal map on 
+Given a causal theory, i.e. a symmetric monoidal category, we can define a model of that causal theory $\mathcal{C}$ in $\Rand$ as a strong monoidal functor $F : \mathcal{C} \to \Rand$. To specify such a functor, it suffices to define its behavior on every atomic variable and every generating map in $\mathcal{C}$, i.e. the counit, comultiplication, and causal mechanisms of $\mathcal{C}$, since the values of the functor on the rest of $\mathcal{C}$ is specified up to isomorphism by the definition of a strong monoidal functor. For example, if $A$ is an atomic causal variable of the causal theory $\mathcal{C}$, then $F$ sends $A$ to a one-dimensional Hilbert space, e.g. one with basis set $\{X\}$. On tensor products of atomic causal variables, $F(A \otimes B)$ gives the tensor product $F(A) \otimes F(B)$, i.e. the space of random variables with basis set $\{F(A), F(B)\}$ and probabilities inherited from the product measure. On morphisms, $F([A]) : F(\ast) \to F(A)$ is just the single random variable in $F(A)$, and a causal mechanism $[C|AB]$ becomes a linear operator $F([C|AB]) : F(A \otimes B) \to F(C)$. % The comultiplication is just the diagonal map on 
+
+Note that diagrams in the causal theory do not, typically, give rise to diagrams of the same shape in $\Rand$. For example, a confounding variable $Y$ with causal structure $X \leftarrow Y \to Z$ will typically generate the diagram corresponding to $\rho_{XZ\cdot Y}$. In general, each strong monoidal functor $\mathcal{C} \to \Rand$ converts a causal theory into a certain ``package'' of related indicator sets, where the operational indicator framework is represented by the terminal leaves of the causal theory. Picking the appropriate functor constitutes an optimization problem.
 
 % How do we actually use this thing? Can we articulate a particular causal pathway of correlations, so that the optimal indicator framework between $X$ and $Z$ can be evaluated based on the causal structure.
 
@@ -746,11 +756,7 @@ Given a causal theory, i.e. a symmetric monoidal category, we can define a model
 
 % Object of the category $\Rand$ are Hilbert spaces $L^2(\Omega, \mathcal{F}, \mathbb{P})$ of standard square-integrable random variables over a probability space $(\Omega, \mathcal{F}, \mathbb{P})$. Morphisms are unitary matrices of the appropriate dimensions, composition $g \circ f : H \to H'$ is given by matrix multiplication, and the tensor is the matrix tensor product with unit $\mathbb{R}$. A state of $H$ is a normalized vector representing a specific, standard random variable in $H$.
 
-% Check what effects are!!
-
 % Recall that $\Rand$ is the category with objects are real Hilbert spaces of square-integrable random variables over a fixed probability space $(\Omega, \mathcal{F}, \mathbb{P})$ and morphisms are unitary operators preserving the inner product. The problem with $\Rand$ is that unitary operators, while convenient from the point of view of the Hilbert space structure, do not have the nice probabilistic interpretation that stochastic kernels do in $\Stoch$. Notably, an arbitrary stochastic kernel on $(\Omega, \mathcal{F})$, is not an extension of the sample space, nor is it a stochastic kernel as in $\Stoch$. $UX$ is a new random variable such that, given an event in the domain of $X$, returns probability of th.
-
-What is the functor doing? If $A$ is an atomic causal variable of the causal theory $\mathcal{C}$, then $F$ sends $A$ to a one-dimensional Hilbert space, e.g. one with basis set $\{X\}$. Then on tensor products of atomic causal variables, $F(A \otimes B)$ gives the tensor product $F(A) \otimes F(B)$, i.e. the integrated random variable with basis set $\{F(A), F(B)\}$ and probabilities inherited from the product measure. On morphisms, $F([A]) : \mathbb{R} \to F(A)$ is just a random variable, and a causal mechanism $[C|AB]$ becomes a transformation $F([C|AB]) : F(A \otimes B) \to F(C)$.
 
 We can now state the definition of $\Ind$.
 
@@ -767,7 +773,7 @@ We can now state the definition of $\Ind$.
 \end{enumerate}
 \end{definition}
 
-One may directly compare $\Ind$ with the category of stochastic causal models in \cite{fong13}, which are generalizations of Bayesian networks.
+In other words, an object of $\Ind$ represents a diagram in $\Rand$, whose nodes are indicator sets and whose edges have been organized to represent the various relationships between indicator sets. One may directly compare $\Ind$ with the category of stochastic causal models in \cite{fong13}, which are generalizations of Bayesian networks.
 
 %\begin{example}
 %Suppose we start with an initial probability vector, $(0.1,0.3,0.6)$. Then if you multiply this through, 
