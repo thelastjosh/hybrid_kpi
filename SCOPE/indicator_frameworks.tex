@@ -480,6 +480,7 @@ Explicitly, $E_{Y,X}$ measures the nonlinear component of the relation between $
 \]
 That is, the correlation between $X$ and $Z$ can be computed by applying a transformation ``$E_{Y,X}$'', representing some sort of structured noise factor, then applying a transformation ``$E_{Y,Z}$'' that cancels out the noise introduced by ``$E_{Y,X}$''. 
 
+
 % CHECK: does the correlation actually define a metric? In fact, how badly does it fail to be a metric?
 
 %We are interested in how correlations between two variables, $X$ and $Z$, may `factor through' a mediating variable, $Y$, in such a way that their correlations commute, as in the diagram below.
@@ -545,6 +546,12 @@ The category of random variables, $\Rand$, is defined by the following data:
 \end{definition}
 % Should the random variables be operators on the Hilbert space $\mathbb{R}$, rather than as basis elements? No. The probability distributions are the operators.
 % modulo = keeping constant = X modulo Y, i.e. Is there a quotient on random variables?
+
+\redout{[Replace example below with air pollution example. Start using causal diagrams \emph{now}, e.g. chains, $X \to Y \to Z$, forks $X \leftarrow Z \to Y$, colliders $X \to W \leftarrow Y \to Z$.]} % Do we need to talk about fine-tuning? We should if the goal of the paper is to demonstrate ``this is how one builds and tests scientific theories of cities.''
+
+\redout{[What is a correlation? One can also think of it as the amount of shared information between two random variables. This is what allows quantum correlations to be ``stronger'' than perfect classical correlations.]}
+
+\redout{[Example involving Berkson's paradox?]}
 
 \begin{example}
 Suppose that the transportation department buys a new bus and designates an indicator, $X$, that counts the number of riders on the bus per day. Elsewhere, the education department tracks an indicator, $Z$, that counts the number of students per day who are absent from class across the whole city. Assume that $X$ and $Z$ live in indicator sets $\mathcal{X}$ and $\mathcal{Z}$.
