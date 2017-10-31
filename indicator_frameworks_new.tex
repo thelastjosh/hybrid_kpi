@@ -361,16 +361,17 @@ A perfectly anti-correlated joint state in $\FinStoch$ is just a cup with a NOT-
 %\end{figure}
 More generally, any correlation can be obtained by attaching a suitable box to one of the ends of the cup.
 
-There are two major problems with this graphical formalism, and with $\Stoch$ and $\FinStoch$ in general. First and foremost, there is not a very convenient way of talking about \emph{random variables}. Technically, a real-valued random variable is given by the diagram below, of a measurable function $X : (\Omega, \Sigma_\Omega) \to (\mathbb{R}, \Sigma_\mathbb{R})$ which takes possible outcomes in $\Omega$ to their numerical representations in $\mathbb{R}$ (technically, $X$ is not a function but a stochastic matrix whose columns represent point probabilities), a probability measure $P : 1 \to (\Omega, \Sigma_\Omega)$ on the outcomes in $\Omega$, and finally the pushforward $X(P)$ of $P$ along $X$, which represents the probability distribution of the random variable $X$.
+\grayout{
+There are two major problems with this graphical formalism, and with $\Stoch$ and $\FinStoch$ in general. First and foremost, there is not a very convenient way of talking about \emph{random variables}. Technically, a real-valued random variable is given by the diagram below, of a measurable function $X : (\Omega, \Sigma_\Omega) \to (\mathbb{R}, \Sigma_\mathbb{R})$ which takes possible outcomes in $\Omega$ to their numerical representations in $\mathbb{R}$ (technically, $X$ is not a function but a stochastic matrix whose columns represent point probabilities), a probability measure $P : 1 \to (\Omega, \Sigma_\Omega)$ on the outcomes in $\Omega$, and finally the pushforward $X(P)$ of $P$ along $X$, which represents the probability distribution of the random variable $X$.}
 \[
 \begin{tikzcd}
 1 \arrow[r, "P"] \arrow[rd, "X(P)"'] & (\Omega, \Sigma_\Omega) \arrow[d, "X"] \\
  & (\mathbb{R}, \Sigma_\mathbb{R})
 \end{tikzcd}
 \]
-Besides being difficult to work with, the point of view of this paper is that probability measures are not random variables nor are they sufficient replacements; a probability measure is something probability theorists invented in order to talk about random variables. While useful in the context of Bayesian networks, which can be articulated primarily in terms of stochastic processes, probability measures are less visible in cases driven by data and by correlational arguments.
+\grayout{Besides being difficult to work with, the point of view of this paper is that probability measures are not random variables nor are they sufficient replacements; a probability measure is something probability theorists invented in order to talk about random variables. While useful in the context of Bayesian networks, which can be articulated primarily in terms of stochastic processes, probability measures are less visible in cases driven by data and by correlational arguments.
 
-The second problem is that there is not a good interpretation of \emph{effect}, i.e. of ``measuring'' or computing something with respect to a specific state. An effect in $\FinStoch$
+The second problem is that there is not a good interpretation of \emph{effect}, i.e. of ``measuring'' or computing something with respect to a specific state. An effect in $\FinStoch$}
 \[
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
@@ -382,8 +383,8 @@ The second problem is that there is not a good interpretation of \emph{effect}, 
 	\end{pgfonlayer}
 \end{tikzpicture}
 \]
-is defined to be a morphism $X^\dagger : (A,\Sigma_A) \to 1$, i.e. a function $X^\dagger : A \times \Sigma_\ast \to [0,1]$. The problem is that $1$ is terminal in $\Stoch$: there is only one possible morphism from any object to 1 due to the constraint on morphisms of being a probability measure. In particular, for any $(A, \Sigma_A)$ and for all $a \in A$, the unique map $X^\dagger : (A, \Sigma_A) \to 1$ is given by $X^\dagger(\ast | a) = 1$ and $X^\dagger( \varnothing | a) = 0$. In other words, any `measurement' of a state (i.e. a probability distribution) in $\FinStoch$ and $\Stoch$ simply kills the state. % Essentially, $X^\dagger$ represents a random variable, since $X^\dagger(\ast | a)$ is just the probability of $A$ $\ast$ given $a$. But $X^\dagger \circ X (\ast | a)$ functor returns a probability for each element of $A$, so it amounts to a random variable.
-
+\grayout{is defined to be a morphism $X^\dagger : (A,\Sigma_A) \to 1$, i.e. a function $X^\dagger : A \times \Sigma_\ast \to [0,1]$. The problem is that $1$ is terminal in $\Stoch$: there is only one possible morphism from any object to 1 due to the constraint on morphisms of being a probability measure. In particular, for any $(A, \Sigma_A)$ and for all $a \in A$, the unique map $X^\dagger : (A, \Sigma_A) \to 1$ is given by $X^\dagger(\ast | a) = 1$ and $X^\dagger( \varnothing | a) = 0$. In other words, any `measurement' of a state (i.e. a probability distribution) in $\FinStoch$ and $\Stoch$ simply kills the state. % Essentially, $X^\dagger$ represents a random variable, since $X^\dagger(\ast | a)$ is just the probability of $A$ $\ast$ given $a$. But $X^\dagger \circ X (\ast | a)$ functor returns a probability for each element of $A$, so it amounts to a random variable.
+}
 % Typically, in such a diagram one begins with some states, which are the prior probabilities, and then transforms these through a given protocol---representing sampling from a distribution---to end up with new states, which are the posterior probabilities.
 
 % One criticism of $\Stoch$, and by extension $\Bayes$, is that by focusing measure spaces and stochastic maps, they miss the fact that probability theory is not really about probability spaces; it is about families of random variables.
@@ -515,6 +516,7 @@ That is, the correlation between $X$ and $Z$ can be computed by applying a trans
 
 % \redout{Shouldn't one typical feature of an indicator framework be that the variables SHOULD be correlated (or anti-correlated) with each other? Otherwise how do we do optimization of processes? So these things \emph{cannot} be orthogonal to each other...}
 
+\grayout{
 We can formalize this intuition. Recall that real-valued, square-integrable random variables over a given probability space form a Hilbert space $L^2(\Omega, \Sigma, \mathbb{P})$ whose inner product is just the covariance. % i.e. the `best estimate of $X$ using $Y$', i.e. the linear function of $Y$ which is closest to $X$, i.e. $a + bX$ for some $a$ and $b$.
 
 \begin{definition}
@@ -558,6 +560,7 @@ The category of random variables, $\Rand$, is defined by the following data:
 \begin{lemma}
 $\Rand$ is a symmetric monoidal category with the above tensor.
 \end{lemma}
+}
 % Should the random variables be operators on the Hilbert space $\mathbb{R}$, rather than as basis elements? No. The probability distributions are the operators.
 % modulo = keeping constant = X modulo Y, i.e. Is there a quotient on random variables?
 
@@ -732,6 +735,7 @@ Second, many operational indicator frameworks are constructed based on experts' 
 
 % \redout{Suppose that we have some data tables comparing $X, Y$ and $Y, Z$, and compute the sample correlations $\Cor(X,Y) = 0.5$ and $\Cor(Y,Z) = 0.8$. To compute $\Cor(X,Z)$...}
 
+\grayout{
 We recall the definition of causal theory from Fong \cite{fong13}, as a certain symmetric monoidal category induced from a directed acyclic graph (i.e. the causal structure), such as any of the three graphs above. Without going into the details, the idea is that given such a causal structure, we can specify a symmetric monoidal category whose objects are collections of the letters $\{X, Y, Z\}$, and whose morphisms are generated by the counit (representing `deletion') and comultiplication (representing `copying'), depicted respectively by
 \[
 \begin{tikzpicture}
@@ -777,7 +781,7 @@ and by a set of causal mechanisms generated from the causal structure, $[A] : \v
 \]
 
 Given a causal theory, i.e. a symmetric monoidal category, we can define a model of that causal theory $\mathcal{C}$ in $\Rand$ as a strong monoidal functor $F : \mathcal{C} \to \Rand$. To specify such a functor, it suffices to define its behavior on every atomic variable and every generating map in $\mathcal{C}$, i.e. the counit, comultiplication, and causal mechanisms of $\mathcal{C}$, since the values of the functor on the rest of $\mathcal{C}$ is specified up to isomorphism by the definition of a strong monoidal functor. For example, if $A$ is an atomic causal variable of the causal theory $\mathcal{C}$, then $F$ sends $A$ to a one-dimensional Hilbert space, e.g. one with basis set $\{X\}$. On tensor products of atomic causal variables, $F(A \otimes B)$ gives the tensor product $F(A) \otimes F(B)$, i.e. the space of random variables with basis set $\{F(A), F(B)\}$ and probabilities inherited from the product measure. On morphisms, $F([A]) : F(\ast) \to F(A)$ is just the single random variable in $F(A)$, and a causal mechanism $[C|AB]$ becomes a linear operator $F([C|AB]) : F(A \otimes B) \to F(C)$. % The comultiplication is just the diagonal map on 
-
+}
 Note that diagrams in the causal theory do not, typically, give rise to diagrams of the same shape in $\Rand$. For example, a confounding variable $Y$ with causal structure $X \leftarrow Y \to Z$ will typically generate the diagram corresponding to $\rho_{XZ\cdot Y}$. In general, each strong monoidal functor $\mathcal{C} \to \Rand$ converts a causal theory into a certain ``package'' of related indicator sets, where the operational indicator framework is represented by the terminal leaves of the causal theory. Picking the appropriate functor constitutes an optimization problem.
 
 % How do we actually use this thing? Can we articulate a particular causal pathway of correlations, so that the optimal indicator framework between $X$ and $Z$ can be evaluated based on the causal structure.
