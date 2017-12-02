@@ -1,0 +1,170 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{{\tt DOI:}\penalty0{#1}\ }
+  \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       #1{#1}          \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Coecke and Spekkens}{Coecke and
+  Spekkens}{2012}]%
+        {coecke_spekkens}
+\bibfield{author}{\bibinfo{person}{Bob Coecke} {and} \bibinfo{person}{Rob
+  Spekkens}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Picturing classical and quantum Bayesian
+  inference}.
+\newblock \bibinfo{journal}{{\em Synthese\/}} \bibinfo{volume}{186},
+  \bibinfo{number}{3} (\bibinfo{date}{June} \bibinfo{year}{2012}),
+  \bibinfo{pages}{651--696}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Doran}{Doran}{1981}]%
+        {doran1981there}
+\bibfield{author}{\bibinfo{person}{George~T Doran}.}
+  \bibinfo{year}{1981}\natexlab{}.
+\newblock \bibinfo{journal}{{\em Management review\/}} \bibinfo{volume}{70},
+  \bibinfo{number}{11} (\bibinfo{year}{1981}), \bibinfo{pages}{35--36}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Epstein and Manzoni}{Epstein and
+  Manzoni}{1997}]%
+        {epstein1997balanced}
+\bibfield{author}{\bibinfo{person}{Marc~J Epstein} {and}
+  \bibinfo{person}{Jean-Francois Manzoni}.} \bibinfo{year}{1997}\natexlab{}.
+\newblock \showarticletitle{The balanced scorecard and tableau de bord:
+  translating strategy into action}.
+\newblock \bibinfo{journal}{{\em Strategic Finance\/}} \bibinfo{volume}{79},
+  \bibinfo{number}{2} (\bibinfo{year}{1997}), \bibinfo{pages}{28}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fong}{Fong}{2013}]%
+        {fong13}
+\bibfield{author}{\bibinfo{person}{Brendan Fong}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{title}{Causal Theories: A Categorical Perspective on
+  Bayesian Networks}.  (\bibinfo{date}{April} \bibinfo{year}{2013}).
+\newblock
+\newblock
+\shownote{Preprint.}
+
+
+\bibitem[\protect\citeauthoryear{Giry}{Giry}{1982}]%
+        {giry82}
+\bibfield{author}{\bibinfo{person}{Mich\'ele Giry}.}
+  \bibinfo{year}{1982}\natexlab{}.
+\newblock \showarticletitle{A categorical approach to probability theory}.
+\newblock In \bibinfo{booktitle}{{\em Categorical Aspects of Topology and
+  Analysis}}, \bibfield{editor}{\bibinfo{person}{B.~Banaschewski}} (Ed.).
+  \bibinfo{series}{Lecture Notes in Mathematics}, Vol.~\bibinfo{volume}{915}.
+  \bibinfo{publisher}{Springer-Verlag}, \bibinfo{pages}{68--85}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Horvath}{Horvath}{2011}]%
+        {horvath11}
+\bibfield{author}{\bibinfo{person}{Steve Horvath}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Weighted Network Analysis: Applications in
+  Genomics and Systems Biology}}.
+\newblock \bibinfo{publisher}{Springer}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lauritzen}{Lauritzen}{1996}]%
+        {lauritzen96}
+\bibfield{author}{\bibinfo{person}{Steffen~L. Lauritzen}.}
+  \bibinfo{year}{1996}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Graphical Models}}.
+\newblock \bibinfo{publisher}{Oxford University Press}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lawvere}{Lawvere}{}]%
+        {lawvere62}
+\bibfield{author}{\bibinfo{person}{Francis~William Lawvere}.}
+\newblock \bibinfo{title}{The category of probabilistic mappings}.
+  (\bibinfo{year}{????}).
+\newblock
+\newblock
+\shownote{Unpublished seminar notes.}
+
+
+\bibitem[\protect\citeauthoryear{Niemeijer and de~Groot}{Niemeijer and
+  de~Groot}{2008}]%
+        {niemeijer08}
+\bibfield{author}{\bibinfo{person}{David Niemeijer} {and}
+  \bibinfo{person}{Rudolf~S. de Groot}.} \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{A conceptual framework for selecting environmental
+  indicator sets}.
+\newblock \bibinfo{journal}{{\em Ecological Indicators\/}}  \bibinfo{volume}{8}
+  (\bibinfo{year}{2008}), \bibinfo{pages}{14--25}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Pearl}{Pearl}{2009}]%
+        {pearl09}
+\bibfield{author}{\bibinfo{person}{Judea Pearl}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{booktitle}{{\em Causality}}.
+\newblock \bibinfo{publisher}{Cambridge University Press}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Selinger}{Selinger}{2009}]%
+        {selinger09}
+\bibfield{author}{\bibinfo{person}{Peter Selinger}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \bibinfo{title}{A survey of graphical languages for monoidal
+  categories}.  (\bibinfo{date}{August} \bibinfo{year}{2009}).
+\newblock
+\newblock
+\shownote{Preprint.}
+
+
+\bibitem[\protect\citeauthoryear{{Spivak}}{{Spivak}}{2010}]%
+        {spivak10}
+\bibfield{author}{\bibinfo{person}{D.~I. {Spivak}}.}
+  \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{{Functorial Data Migration}}.
+\newblock \bibinfo{journal}{{\em ArXiv e-prints\/}} (\bibinfo{date}{Sept.}
+  \bibinfo{year}{2010}).
+\newblock
+\showeprint[arxiv]{cs.DB/1009.1166}
+
+
+\end{thebibliography}
