@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: indicator_frameworks_new.aux
+The style file: abbrv.bst
+Database file #1: paper.bib
+Warning--empty title in doran1981there
+You've used 12 entries,
+            2118 wiz_defined-function locations,
+            570 strings with 5018 characters,
+and the built_in function-call counts, 3003 in all, are:
+= -- 291
+> -- 106
+< -- 2
++ -- 48
+- -- 31
+* -- 175
+:= -- 537
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 47
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 131
+empty$ -- 255
+format.name$ -- 31
+if$ -- 620
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 12
+newline$ -- 62
+num.names$ -- 26
+pop$ -- 52
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 83
+stack$ -- 0
+substring$ -- 146
+swap$ -- 18
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 42
+warning$ -- 1
+while$ -- 32
+width$ -- 14
+write$ -- 126
+(There was 1 warning)

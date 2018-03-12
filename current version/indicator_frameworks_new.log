@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 NOV 2017 03:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 MAR 2018 12:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**indicators.tex
-(./indicators.tex
+**indicator_frameworks_new.tex
+(./indicator_frameworks_new.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -909,23 +909,23 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count145
 ))
-(./defs.tex) (./tikzstyles.tex) (./indicators.aux)
-\openout1 = `indicators.aux'.
+(./defs.tex) (./tikzstyles.tex) (./indicator_frameworks_new.aux)
+\openout1 = `indicator_frameworks_new.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
 
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -957,7 +957,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring OFF on input line 126.
+Package hyperref Info: Link coloring OFF on input line 97.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -967,197 +967,135 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 126.
-LaTeX Info: Redefining \pageref on input line 126.
-LaTeX Info: Redefining \nameref on input line 126.
+LaTeX Info: Redefining \ref on input line 97.
+LaTeX Info: Redefining \pageref on input line 97.
+LaTeX Info: Redefining \nameref on input line 97.
 
-(./indicators.out) (./indicators.out)
+(./indicator_frameworks_new.out) (./indicator_frameworks_new.out)
 \@outlinefile=\write4
-\openout4 = `indicators.out'.
+\openout4 = `indicator_frameworks_new.out'.
 
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.12} into 
 your preamble.
- on input line 126.
+ on input line 97.
 
 \docmute@nestinglevel=\count153
-LaTeX Font Info:    Try loading font information for U+msa on input line 128.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 128.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 128.
-
+LaTeX Font Info:    Try loading font information for U+stmry on input line 99.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Overfull \hbox (20.49358pt too wide) in paragraph at lines 99--99
+ [][] 
+ []
 
-LaTeX Warning: No \author given.
+<portland.png, id=75, 969.3816pt x 417.2388pt>
+File: portland.png Graphic file (type png)
+ <use portland.png>
+Package pdftex.def Info: portland.png used on input line 118.
+(pdftex.def)             Requested size: 345.0pt x 148.49324pt.
+ [1
 
-[1
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./portl
+and.png>]
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-./indicators.tex:148: LaTeX Error: File `portland' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.148 \includegraphics[width=\linewidth]{portland}
-                                                  
-? 
-
-LaTeX Warning: Citation `epstein1997balanced' on page 2 undefined on input line
- 155.
+LaTeX Warning: Citation `citykeys??' on page 2 undefined on input line 129.
 
 
-LaTeX Warning: Citation `doran1981there' on page 2 undefined on input line 155.
-
+LaTeX Warning: Citation `bostonindicators??' on page 2 undefined on input line 
+129.
 
 [2]
 
-LaTeX Warning: Citation `selinger09' on page 3 undefined on input line 208.
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 156.
 
 
-LaTeX Warning: Citation `fong13' on page 3 undefined on input line 208.
+LaTeX Warning: Reference `??3.1' on page 3 undefined on input line 200.
 
 
-LaTeX Warning: Citation `niemeijer08' on page 3 undefined on input line 215.
-
-
-LaTeX Warning: Citation `horvath11' on page 3 undefined on input line 215.
+LaTeX Warning: Reference `?? 3.2' on page 3 undefined on input line 200.
 
 [3]
-
-LaTeX Warning: Citation `lawvere62' on page 4 undefined on input line 225.
-
-
-LaTeX Warning: Citation `coecke_spekkens' on page 4 undefined on input line 225
-.
-
-
-LaTeX Warning: Citation `lauritzen96' on page 4 undefined on input line 225.
-
-
-LaTeX Warning: Citation `lawvere62' on page 4 undefined on input line 225.
-
-
-LaTeX Warning: Citation `coecke_spekkens' on page 4 undefined on input line 225
-.
-
-
-LaTeX Warning: Citation `fong13' on page 4 undefined on input line 225.
-
 Missing character: There is no ` in font nullfont!
-[4]
+ [4] [5]
 
-LaTeX Warning: Citation `lawvere62' on page 5 undefined on input line 242.
+LaTeX Warning: Citation `coecke' on page 6 undefined on input line 344.
 
+[6]
 
-LaTeX Warning: Citation `giry82' on page 5 undefined on input line 242.
-
-
-LaTeX Warning: Citation `coecke_spekkens' on page 5 undefined on input line 254
-.
-
-[5] [6]
-
-LaTeX Warning: Reference `eqn:guess1' on page 7 undefined on input line 370.
+LaTeX Warning: Reference `???' on page 7 undefined on input line 375.
 
 [7]
+Overfull \hbox (51.66666pt too wide) in paragraph at lines 404--416
+ [] 
+ []
 
-LaTeX Warning: Reference `eqn:guess1' on page 8 undefined on input line 395.
-
-
-LaTeX Warning: Reference `eqn:guess2' on page 8 undefined on input line 402.
-
-
-Overfull \hbox (0.82693pt too wide) in paragraph at lines 528--528
+[8]
+Overfull \hbox (0.82693pt too wide) in paragraph at lines 456--457
 \OT1/cmr/m/n/10 of square-integrable ran-dom vari-ables (un-der the equiv-a-len
 ce re-la-tion $\OML/cmm/m/it/10 X[] \OMS/cmsy/m/n/10 ^^X
  []
 
-[8] [9] [10]
+[9]
 
-LaTeX Warning: Citation `spivak10' on page 11 undefined on input line 624.
+LaTeX Warning: Citation `selinger13' on page 10 undefined on input line 474.
 
-
-LaTeX Warning: Reference `eqn:summation' on page 11 undefined on input line 656
-.
-
-
-LaTeX Warning: Citation `pearl09' on page 11 undefined on input line 663.
-
-[11]
-
-LaTeX Warning: Citation `niemeijer08' on page 12 undefined on input line 699.
+[10] [11] [12]
+Overfull \hbox (1.55618pt too wide) in paragraph at lines 691--692
+[]\OT1/cmr/m/n/10 Don't just think sin-gle vari-ables: think sets and sys-tems 
+of vari-ables thereof---
+ []
 
 
-LaTeX Warning: Citation `fong13' on page 12 undefined on input line 749.
+LaTeX Warning: Citation `abhishek16' on page 13 undefined on input line 693.
 
-[12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 717.
 
-LaTeX Warning: Citation `fong13' on page 13 undefined on input line 775.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 717.
+ [13] [14]
+[15] [16] [17] [18] (./indicator_frameworks_new.bbl) [19]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1000.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1000.
 
+(./indicator_frameworks_new.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1000.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1000.
 
-LaTeX Warning: Citation `lawvere62' on page 13 undefined on input line 834.
+Package rerunfilecheck Info: File `indicator_frameworks_new.out' has not change
+d.
+(rerunfilecheck)             Checksum: 34F167AA79370ECA82A9D2AF9937CEB3;652.
 
-
-LaTeX Warning: Citation `coecke_spekkens' on page 13 undefined on input line 83
-4.
-
-
-LaTeX Warning: Citation `fong13' on page 13 undefined on input line 834.
-
-[13]
-
-./indicators.tex:843: LaTeX Error: File `anil_seth' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.843 }
-       
-? 
-No file indicators.bbl.
-[14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 859.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 859.
- (./indicators.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 859.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 859.
-
-
-Package rerunfilecheck Warning: File `indicators.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `indicators.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  65917DCB98B0160067647943F11F34D8;192.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 859.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1000.
  ) 
 Here is how much of TeX's memory you used:
- 32403 strings out of 493089
- 788972 string characters out of 6134842
- 991455 words of memory out of 5000000
- 35218 multiletter control sequences out of 15000+600000
- 17253 words of font info for 67 fonts, out of 8000000 for 9000
+ 32636 strings out of 493089
+ 793686 string characters out of 6134842
+ 991483 words of memory out of 5000000
+ 35406 multiletter control sequences out of 15000+600000
+ 17728 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,15n,82p,1810b,959s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,16n,82p,1239b,961s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -1182,12 +1120,13 @@ fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on indicators.pdf (14 pages, 306484 bytes).
+ype1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on indicator_frameworks_new.pdf (19 pages, 445488 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 400 PDF objects out of 1000 (max. 8388607)
+ 330 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
