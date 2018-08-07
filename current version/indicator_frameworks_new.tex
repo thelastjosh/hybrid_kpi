@@ -3,6 +3,8 @@
 \usepackage{amsmath, amssymb, amsthm, enumerate}
 \usepackage{blkarray}
 \usepackage{tikz}
+\usepackage{xcolor, soul}
+\usepackage{tabularx}
 \usetikzlibrary{cd}
 \usetikzlibrary{matrix}
 % \usepackage{url}
@@ -134,6 +136,18 @@ In city planning, there are several strategy-setting frameworks for constructing
 
 We propose an alternative: ``start with the data you have, not the data you want''. Instead of constructing operational indicator frameworks expensively and internally, meaning indicator-by-indicator, we can specify them abstractly and externally, by means of their causal and statistical relationships to other, already-extant sets of indicators. Our approach is especially suited to situations where heterogeneous measurement data is distributed across many projects, many subject domains, and many localities, as in a city.
  
+Correlation table!
+\[
+\begin{tabular}{c|ccccc}
+		& $A$ & $B$ & $C$ & $D$ & $E$ \\ \hline
+$A$		& 1 & 0.1 & -0.8 & \hl{$x_1$} & \hl{$x_2$} \\
+$B$		& & 1 & 0.2 & \hl{$x_3$} & \hl{$x_4$} \\
+$C$		& & & 1 & 0.9 & -0.3 \\
+$D$		& & & & 1 & -0.7 \\
+$E$		& & & & & 1
+\end{tabular}
+\]
+ 
 However, such an approach faces several practical data-engineering challenges:
 \begin{problem}[Data integration]
 It is not always possible to directly compare local sets of indicators---e.g. to construct a correlation matrix---especially when the indicator sets are disjoint. The combined data over all the indicators may not exist; or if the data does exist, it may not be sufficient to support the kinds of arguments the user wants to make; or it may be prohibitively difficult to integrate the data for a multitude of different reasons \cite{halevy_integration_book?}.
@@ -213,6 +227,18 @@ As mentioned above, there are a variety of approaches to choosing indicator fram
 \redout{Relate to ``conceptual spaces'' idea in Bob's work as well as in the original Gardenfohrs, since we are depending very much on Hilbert spaces to store the geometry of our data.}
 
 \redout{A related idea... can we understand correlation as signifying or approximating a kind of ``cooperation'' between variables? Think about what it represents in higher-order phenomena: what's happening between two things at many levels. The level of cooperation can be used to summarize a single system.}
+
+\redout{For completeness, we provide the following definition from \cite{pearl09}.
+
+\begin{definition}[Causal Bayesian network] Let $P(v)$ be a probability distribution on a set $V$ of random variables, and let $P(v|do(x))$ denote the distribution resulting from the intervention $do(X = x)$ that sets a subset $X$ of variables to constants $x$. Denote by $P_\ast$ the set of all interventional distributions $P(v|do(x))$ for all $X \subset V$, including $P(v)$, which represents $X = \O$. A DAG $G$ is said to be a causal Bayesian network compatible with $P_\ast$ if and only if the following three conditions hold for every $P(v|do(x)) \in P_\ast$:
+\begin{enumerate}
+\item $P(v|do(x))$ is Markov relative to $G$.
+\item $P(v_i|do(x)) = 1$ for all $V_i \in X$ whenever $v_i$ is consistent with $latex X = x$.
+\item $P(v_i|do(x), pa_i) = P(v_i | pa_i)$ for all $V_i \notin X$ whenever $pa_i$ is consistent with $X =x$.
+\end{enumerate}
+Causal Bayesian networks are to be distinguished from the standard ``associational'' Bayesian networks, since they are defined explicitly in terms of post-interventions distributions.
+\end{definition}
+}
 
 % \redout{[TO ADD: Pearl's discussion of causality and causal models using diagrams, methods of doing observational studies by eliminating interventions = surgeries on equations via diagrams. Simpson's paradox (see Fong's example).]}
 
